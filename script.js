@@ -34,3 +34,13 @@ function getComputerChoice() {
         computerChoice = scissor
     }
 }
+
+// DECLARE variable to store human choice and CALL the function to input it.
+let humanChoice = '';
+getHumanChoice();
+
+// DECLARE the function.
+function getHumanChoice() {
+   const humanInput = prompt('Write your choice');
+   humanChoice = humanInput;
+}
