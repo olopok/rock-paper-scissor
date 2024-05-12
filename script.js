@@ -1,18 +1,11 @@
-// DECLARE variable to store computer choice.
 let computerChoice = '';
 getComputerChoice();
+let humanChoice = '';
+getHumanChoice();
+
 
 // DECLARE the function for computer choice.
 function getComputerChoice() {
-
-    // DECLARE variable for 'rock'.
-    const rock = 'rock';
-
-    // DECLARE variable for 'paper'.
-    const paper = 'paper';
-
-    // DECLARE variable for 'scissor'.
-    const scissor = 'scissor';
 
     // DECLARE variable to store the random value and GET the value.
 
@@ -20,29 +13,84 @@ function getComputerChoice() {
 
     // IF condition for 1.
     if (randomValue === 1) {
-        computerChoice = rock;
+        computerChoice = 'rock';
     }
 
     // ELSE IF condition for 2.
     else if (randomValue === 2) {
-        computerChoice = paper;
+        computerChoice = 'paper';
     }
 
     // ELSE condition for 3.
     else {
-        computerChoice = scissor
+        computerChoice = 'scissor';
     }
+    console.log(computerChoice);
 }
 
-// DECLARE variable to store human choice and CALL the function to input it.
-let humanChoice = '';
-getHumanChoice();
-
-// DECLARE the function.
 function getHumanChoice() {
-   const humanInput = prompt('Write your choice');
-   humanChoice = humanInput;
+    const humanInput = prompt('Write your choice');
+    humanChoice = humanInput;
 }
 
 let humanScore = 0;
 let computerScore = 0;
+
+// DECLARE function.
+function playRound(humanSelection, computerSelection) {
+
+    switch (humanSelection) {
+        case 'rock': {
+            if (computerSelection === 'paper') {
+                console.log('you lose');
+                computerScore += 1;
+            } else if (computerSelection === 'scissor') {
+                console.log('you win');
+                humanScore += 1;
+            } else {
+                console.log('The round is par');
+            }
+            break;
+        }
+
+        case 'paper': {
+            if (computerSelection === 'rock') {
+                console.log('you win');
+                humanScore += 1;
+            } else if (computerSelection === 'scissor') {
+                console.log('you lose');
+                computerScore += 1;
+            } else {
+                console.log('The round is par');
+            }
+            break;
+        }
+
+        case 'scissor': {
+            if (computerSelection === 'rock') {
+                console.log('You lose');
+                computerScore += 1;
+            } else if (computerSelection === 'paper') {
+                console.log('You win');
+                humanScore += 1;
+            } else {
+                console.log('The round is par');
+            }
+            break;
+        }
+
+        default: {
+            console.log('Invalid choice');
+        }
+    }
+
+}
+
+
+
+humanChoice = humanChoice.toLowerCase();
+
+playRound(humanChoice, computerChoice);
+
+console.log('human ', humanScore);
+console.log('computer ', computerScore);
