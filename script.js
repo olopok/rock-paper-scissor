@@ -1,5 +1,4 @@
 // DECLARE variable to store computer choice.
-
 let computerChoice = '';
 getComputerChoice();
 
@@ -44,3 +43,6 @@ function getHumanChoice() {
    const humanInput = prompt('Write your choice');
    humanChoice = humanInput;
 }
+
+let humanScore = 0;
+let computerScore = 0;
