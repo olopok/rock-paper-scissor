@@ -2,25 +2,16 @@ let computerChoice = '';
 let humanChoice = '';
 
 playGame();
-// DECLARE the function for computer choice.
-function getComputerChoice() {
 
-    // DECLARE variable to store the random value and GET the value.
+function getComputerChoice() {
 
     let randomValue = Math.floor(Math.random() * 3) + 1;
 
-    // IF condition for 1.
     if (randomValue === 1) {
         computerChoice = 'rock';
-    }
-
-    // ELSE IF condition for 2.
-    else if (randomValue === 2) {
+    } else if (randomValue === 2) {
         computerChoice = 'paper';
-    }
-
-    // ELSE condition for 3.
-    else {
+    } else {
         computerChoice = 'scissor';
     }
 }
@@ -30,10 +21,7 @@ function getHumanChoice() {
     humanChoice = humanInput;
 }
 
-
-
 humanChoice = humanChoice.toLowerCase();
-
 
 function playGame() {
     let humanScore = 0;
@@ -43,7 +31,6 @@ function playGame() {
         getComputerChoice();
         getHumanChoice();
         playRound(humanChoice, computerChoice);
-
     }
 
     function playRound(humanSelection, computerSelection) {
@@ -92,12 +79,13 @@ function playGame() {
                 console.log('Invalid choice');
             }
         }
+        
         console.log('human ', humanScore);
         console.log('computer ', computerScore);
 
     }
 
-    if (humanScore > computerScore){
+    if (humanScore > computerScore) {
         alert('The winner is: Human');
     } else if (humanScore < computerScore) {
         alert('The winner is: Computer');
@@ -105,10 +93,3 @@ function playGame() {
         alert('The game is par');
     }
 }
-
-
-
-// humanChoice = humanChoice.toLowerCase();
-
-// playRound(humanChoice, computerChoice);
-
