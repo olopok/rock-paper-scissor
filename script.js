@@ -17,8 +17,8 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    const humanInput = prompt('Write your choice');
-    humanChoice = humanInput;
+    const HUMAN_INPUT = prompt('Write your choice');
+    humanChoice = HUMAN_INPUT;
 }
 
 humanChoice = humanChoice.toLowerCase();
